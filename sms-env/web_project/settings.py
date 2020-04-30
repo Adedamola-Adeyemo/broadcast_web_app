@@ -30,9 +30,15 @@ ALLOWED_HOSTS = []
 TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
 TWILIO_NUMBER = os.getenv('TWILIO_NUMBER')
-SMS_BROADCAST_TO_NUMBERS = [
-    '+2348139345956',
-]
+SMS_BROADCAST_TO_NUMBERS = ['+234xxxxxxxxxx']
+'''
+import MySQLdb
+db2 = MySQLdb.connect(HOST, USERNAME, PASSWORD, DATABASE)
+cursor2 = db.cursor()
+query_num = "SELECT test FROM testing"
+cursor2.execute(query_num)
+SMS_BROADCAST_TO_NUMBERS = list(cursor2.fetchall())
+'''
 # Application definition
 
 INSTALLED_APPS = [
@@ -83,9 +89,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+          
     }
 }
 
+      
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
